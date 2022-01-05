@@ -5,7 +5,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
-from flask import Flask, jsonify
+from flask import Flask, render_template, jsonify
 
 
 #################################################
@@ -37,14 +37,18 @@ app = Flask(__name__)
 #################################################
 
 @app.route("/")
-def welcome():
-    """List all available api routes."""
-    return (
-        f"Available Routes:<br/><br/><br/>"
-        f"/api/v1.0/neighborhood_incidents<br/><br/>"
-        f"/api/v1.0/neighborhood_incidents_grouped<br/><br/>"
-        f"/api/v1.0/incidents_time_duration"
-    )
+def index():
+    return render_template("index.html")
+
+
+# def welcome():
+#     """List all available api routes."""
+#     return (
+#         f"Available Routes:<br/><br/><br/>"
+#         f"/api/v1.0/neighborhood_incidents<br/><br/>"
+#         f"/api/v1.0/neighborhood_incidents_grouped<br/><br/>"
+#         f"/api/v1.0/incidents_time_duration"
+#     )
 
 
 
