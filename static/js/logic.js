@@ -3,12 +3,12 @@
 
 // LEAFLET MAP LOGIC
 
-console.log("logic.js is loaded");
+console.log("logic.js is loaded.  Matt was here");
 
 // Creating map object
 var myMap = L.map("map", {
-  center: [39.1, -84.5],
-  zoom: 12
+  center: [39.15, -84.5],
+  zoom: 11
 });
 
 // Adding tile layer to the map
@@ -34,13 +34,14 @@ var baseURL = "/api/v1.0/neighborhood_incidents";
 //var limit = "&$limit=10000";
 
 // Assemble API query URL
-var url = baseURL; //+ date + complaint + limit;
+
 
 
 
 
 //Grab the data with d3
-d3.json("/api/v1.0/neighborhood_incidents").then(function(response) {
+d3.json(baseURL).then(function(response) {
+  console.log("Here is the json response for the map markers:");
   console.log(response);
   // Create a new marker cluster group
   var markers = L.markerClusterGroup();
