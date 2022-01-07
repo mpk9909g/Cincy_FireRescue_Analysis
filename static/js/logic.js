@@ -108,7 +108,9 @@ d3.json(link).then(function(data) {
         },
         // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
         click: function(event) {
-          myMap.fitBounds(event.target.getBounds());
+          console.log("clicked neighborhood:", event.target.feature.properties.NEIGH);
+          var neighborhood = event.target.feature.properties.NEIGH;
+          // DrawLineGraph(neighborhood);
         }
       });
       // Giving each feature a pop-up with information pertinent to it
