@@ -94,7 +94,7 @@ def pie():
 
     # Create a dictionary from the row data and append to a list of all_passengers
     pie_json = []
-    for NEIGHBORHOOD, counts, INCIDENT_TYPE_DESC in results:
+    for NEIGHBORHOOD, INCIDENT_TYPE_DESC, counts in results:
         pie_dict = {}
         pie_dict["neighborhood"] = NEIGHBORHOOD
         pie_dict["incident_type"] = INCIDENT_TYPE_DESC
