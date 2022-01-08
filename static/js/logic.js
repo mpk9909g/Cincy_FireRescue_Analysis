@@ -25,8 +25,6 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 
 
-
-
 // Store API query variables
 var baseURL = "./api/v1.0/neighborhood_incidents";
 //var date = "$where=created_date between'2016-01-01T00:00:00' and '2017-01-01T00:00:00'";
