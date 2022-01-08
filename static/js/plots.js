@@ -115,7 +115,7 @@ d3.json("./api/v1.0/incidents_time_duration").then(function(lineData) {
  
     document.getElementById("map").onclick = function(event) {
       root.dispose();
-      // event.preventDefault();
+      event.preventDefault();
   }
     
   }); // end am5.ready()
