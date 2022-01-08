@@ -1,11 +1,11 @@
 console.log("plotsa.js loaded!!");
 
+
 //Grab data for pie chart using D3
 d3.json("/api/v1.0/neighborhood_incidents_grouped").then(function(pieData) {
     console.log("pie data:", pieData);
 
     let result = pieData.filter(o => o.neighborhood === "AVONDALE")
-
 
     // Sort data for to list incident types in descending order
     // Slice data for chart by top 15 most frequent incident types by neighborhood
