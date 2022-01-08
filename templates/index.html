@@ -2,14 +2,12 @@
 
 <html lang="en-us">
 
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cincinnati Rescue Dashboard</title>
-
-
+  
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cincinnati Rescue Dashboard</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cincinnati Rescue Dashboard</title>
@@ -29,55 +27,59 @@
 
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-
+    <style>
+      #chartdiv {
+        width: 100%;
+        height: 500px;
+        max-width: 100%
+      }
+    </style>
   </head>
 
 
-</head>
-
-<body>
-
-  <!-- Jumbotron div -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>Cincinnati Rescue Dashboard</h1>
-        <p>Explore the Rescue Landscape of the various Cincinnati Neighborhoods</p>
+  <body>
+    <!-- Nav bar div -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href='#'>Cincinnati Rescue</a>
       </div>
+    </nav>
 
+
+    <!-- Jumbotron div -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Cincinnati Rescue Dashboard</h1>
+          <p>Explore the Rescue Landscape of the various Cincinnati Neighborhoods</p>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
 
-  <!-- Map div and Pie Chart div -->
+    <!-- Map div -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Response Time div and Pie div-->
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <h1>Placeholder Title: Map</h1>
-        <div id="map"></div>
+      <div class="col-md-9">
+        <h3>Placeholder Title: Response Time</h3>
+        <div id="chartdiv"></div>
       </div>
-      <div class="col-md-6">
-        <h1>Placeholder Title: Pie Chart</h1>
+      <div class="col-md-3">
+        <h3>Placeholder Title: Pie Chart</h3>
         <div id="pie_chart"></div>
       </div>
     </div>
   </div>
-
-
-  <!-- Response Time div and Gauge div-->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <h1>Placeholder Title: Response Time</h1>
-        <div id="chartdiv"></div>
-      </div>
-      <div class="col-md-3">
-        <h1>Placeholder Title: Gauge</h1>
-        <div id="gauge"></div>
-      </div>
-    </div>
-  </div>
-
+  <!-- <div id="chartdiv"></div> -->
 
 
   <!-- Leaflet JS -->
@@ -107,6 +109,6 @@
   <script type="text/javascript" src="../static/js/plotsf.js"></script>
   <script type="text/javascript" src="../static/js/plotsa.js"></script>
 
-</body>
+  </body>
 
 </html>
