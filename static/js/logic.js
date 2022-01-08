@@ -57,7 +57,7 @@ d3.json(baseURL).then(function(response) {
 
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer(   L.marker(   [   location.latitude, location.longitude   ]  )
-        .bindPopup(response[i].descriptor));
+        .bindPopup("<h3>Incident Type: <h3><h3>" + response[i].incident_type )  );
     }
 
   }
@@ -92,7 +92,7 @@ d3.json(link).then(function(data) {
     onEachFeature: function(feature, layer) {
       // Set mouse events to change map styling
       layer.on({
-        // When a user's mouse touches a map feature, the mouseover event calls this function, that feature's opacity changes to 90% so that it stands out
+        // When a user's mouse touches a map feature, the mouseover event calls this function, that feature's opacity changes to 50% so that it stands out
         mouseover: function(event) {
           layer = event.target;
           layer.setStyle({
@@ -109,10 +109,14 @@ d3.json(link).then(function(data) {
         // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
         click: function(event) {
           myMap.fitBounds(event.target.getBounds());
+          console.log("clicked neighborhood:", event.target.feature.properties.NEIGH);
+          var neighborhood = event.target.feature.properties.NEIGH;
+          console.log("neighborhood variable = ", neighborhood);
+          //DrawLineGraph(neighborhood);
         }
       });
       // Giving each feature a pop-up with information pertinent to it
-      layer.bindPopup("<h1>" + feature.properties.NEIGH + "</h1> <hr> <h2>" + "Matt was here" + "</h2>");
+      layer.bindPopup("<h1>" + feature.properties.NEIGH + "</h1> <hr> <h2>" + "Matt is awesome" + "</h2>");
 
     }
 
