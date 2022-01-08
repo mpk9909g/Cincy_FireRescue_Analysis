@@ -8,38 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cincinnati Rescue Dashboard</title>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cincinnati Rescue Dashboard</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cincinnati Rescue Dashboard</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+      integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+      crossorigin="" />
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin="" />
+    <!-- Marker Cluster CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css"
+      href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
 
-  <!-- Marker Cluster CSS -->
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
-  <link rel="stylesheet" type="text/css"
-    href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-  <style>
-    #chartdiv {
-      width: 100%;
-      height: 500px;
-      max-width: 100%
-    }
-  </style>
-</head>
-
-
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <style>
+      #chartdiv {
+        width: 100%;
+        height: 500px;
+        max-width: 100%
+      }
+    </style>
   </head>
+
 
   <body>
     
@@ -50,27 +46,20 @@
           <h1>Cincinnati Rescue Dashboard</h1>
           <p>Explore the Rescue Landscape of the various Cincinnati Neighborhoods</p>
         </div>
-
       </div>
     </div>
-  </div>
 
-  <!-- Map div and Pie Chart div -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1>Placeholder Title: Map</h1>
-        <div id="map"></div>
-      </div>
-      <div class="col-md-6">
-        <h1>Placeholder Title: Pie Chart</h1>
-        <div id="pie_chart"></div>
+    <!-- Map div -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="map"></div>
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <!-- Response Time div and Gauge div-->
+  <!-- Response Time div and Pie div-->
   <div class="container">
     <div class="row">
       <div class="col-md-9">
@@ -78,8 +67,8 @@
         <div id="chartdiv"></div>
       </div>
       <div class="col-md-3">
-        <h1>Placeholder Title: Gauge</h1>
-        <div id="gauge"></div>
+        <h1>Placeholder Title: Pie Chart</h1>
+        <div id="pie_chart"></div>
       </div>
     </div>
   </div>
@@ -113,6 +102,6 @@
   <script type="text/javascript" src="../static/js/plotsf.js"></script>
   <script type="text/javascript" src="../static/js/plotsa.js"></script>
 
-</body>
+  </body>
 
 </html>
