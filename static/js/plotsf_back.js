@@ -5,8 +5,16 @@ function drawResponseChart(neighborhood) {
   console.log(`drawResponseChart(${neighborhood})`);
 
 
-
-
+document.getElementById("chartdiv").innerHTML="";
+ //Grab the data for line chart with d3
+d3.json("./api/v1.0/incidents_time_duration").then(function(lineData) {
+    console.log(lineData[1].create_time_incident);
+    
+  
+        let result = lineData.filter (o => o.neighborhood.toLowerCase() === neighborhood.toLowerCase());
+        
+        
+        console.log(result);
 
     
 
@@ -36,8 +44,17 @@ function drawResponseChart(neighborhood) {
 
     }));
 
-    
 
+    chart.children.unshift(am5.Label.new(root, {
+      text: neighborhood,
+      fontSize: 25,
+      fontWeight: "500",
+      textAlign: "center",
+      x: am5.percent(50),
+      centerX: am5.percent(100),
+      paddingTop: 50,
+      paddingBottom: 0
+    }));
 
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
@@ -86,42 +103,21 @@ function drawResponseChart(neighborhood) {
       orientation: "horizontal"
     }));
 
-    //Grab the data for line chart with d3
-d3.json("./api/v1.0/incidents_time_duration").then(function(lineData) {
-  console.log(lineData[1].create_time_incident);
-  
-
-      let result = lineData.filter (o => o.neighborhood.toLowerCase() === neighborhood.toLowerCase());
-      
-      
-      console.log(result);
+   
     
     // Set data
     //var data = generateDatas(1200);
     series.data.setAll(result);
 
-   chart.children.unshift(am5.Label.new(root, {
-      text: neighborhood,
-      fontSize: 25,
-      fontWeight: "500",
-      textAlign: "center",
-      x: am5.percent(50),
-      centerX: am5.percent(100),
-      paddingTop: 50,
-      paddingBottom: 0
-    }));
+
     // Make stuff animate on load
     // https://www.amcharts.com/docs/v5/concepts/animations/
     series.appear(10);
     chart.appear(10, 1000);
 
   
- 
-    document.getElementById("map").onclick = function(event) {
-      root.dispose();
-      // event.preventDefault();
-  }
-    
+
+
   }); // end am5.ready()
 });
 

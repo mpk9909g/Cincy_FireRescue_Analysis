@@ -112,7 +112,7 @@ d3.json(link).then(function(data) {
           console.log("clicked neighborhood:", event.target.feature.properties.NEIGH);
           var neighborhood = event.target.feature.properties.NEIGH;
           console.log("neighborhood variable = ", neighborhood);
-          //DrawLineGraph(neighborhood);
+          drawResponseChart(neighborhood);
         }
       });
       // Giving each feature a pop-up with information pertinent to it

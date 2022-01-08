@@ -5,10 +5,10 @@ function drawPieChart(neighborhood) {
     console.log(`drawPieChart(${neighborhood})`);
 }
 
-// Define function to draw Response Chart
-function drawResponseChart(neighborhood) {
-    console.log(`drawResponseChart(${neighborhood})`);
-}
+// // Define function to draw Response Chart
+// function drawResponseChart(neighborhood) {
+//     console.log(`drawResponseChart(${neighborhood})`);
+// }
 
 // Define function to draw Gauge Chart
 function drawGaugeChart(neighborhood) {
