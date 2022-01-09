@@ -16,6 +16,18 @@ Visual Analysis of fire and rescue data in the city of Cincinnati (Project 2 Gro
 1.  Run the jupyter notebook to clean the data and load onto SQL database. It will load the data into the 3 tables.
 
 ### Prepare API endpoint
-1. Locate the config.js file under the static folder
+1. Locate the ``config.js`` file under the **static/js** folder
 1. Replace YOUR-KEY-HERE with your api key from mapbox
 
+
+### Load the website
+Please clone this repository to your desktop and then do the following:
+
+1. Navigate to the folder that contains ``app.py`` and launch a GitBash (Windows) or Terminal (Mac). 
+1. Type ``source activate PythonData38`` and then hit `ENTER`.
+1. Type ``python app.py`` and then hit `ENTER`.
+1. Observe that the Flask server starts and tells you which port it's running on. Don't close this window.
+1. With the Flask server running, enter the address shown in the GitBash window into your Chrome browser (e.g. http://127.0.0.1:5000/). You'll see that it loads the landing page of the Cincinnati Rescue Dashboard. 
+1. Click the link that says "Click here for the website route index!" Chrome loads a new page containing a list of available routes. Be sure to view this link in the HTML file to see how you specify this other page. Dom, Erin, and Shalesh are awesome!
+1.  You're learning this at a good time.  
+1.  
