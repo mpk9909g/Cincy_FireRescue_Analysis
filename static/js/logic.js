@@ -106,16 +106,18 @@ d3.json(link).then(function(data) {
         },
         // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
         click: function(event) {
+
           myMap.fitBounds(event.target.getBounds());
           console.log("clicked neighborhood:", event.target.feature.properties.NEIGH);
           var neighborhood = event.target.feature.properties.NEIGH;
           console.log("neighborhood variable = ", neighborhood);
-          drawResponseChart(neighborhood);
+
+          drawPieChart(neighborhood);drawResponseChart(neighborhood);
           drawPieChart(neighborhood);
         }
       });
       // Giving each feature a pop-up with information pertinent to it
-      layer.bindPopup("<h1>" + feature.properties.NEIGH + "</h1> <hr> <h2>" + "Matt is awesome" + "</h2>");
+      layer.bindPopup("<h1>" + feature.properties.NEIGH + "</h1> <hr> <h2>" + "Dom is awesome" + "</h2>");
 
     }
 
