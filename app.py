@@ -40,6 +40,14 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/routes")
+def routes():
+    return render_template("routes.html")
+
+
+@app.route("/architecture")
+def architecture():
+    return render_template("architecture.html")
 
 # def welcome():
 #     """List all available api routes."""
