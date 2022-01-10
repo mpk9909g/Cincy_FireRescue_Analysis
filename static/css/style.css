@@ -11,7 +11,7 @@ body {
 }
     
 #map{
-    height: 100vh;
+    height: 50vh;
     /* width: 100vh; */
 }
 
@@ -23,6 +23,20 @@ body {
 
 #routes_info {
     padding: 100px;
+}
+
+#architecture {
+    margin: 0;
+    padding: 50px;
+}
+.imgbox {
+    display: grid;
+    height: 100%;
+}
+.center-fit {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
 }
 
 
