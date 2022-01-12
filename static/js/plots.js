@@ -23,21 +23,28 @@ d3.json("/api/v1.0/neighborhood_incidents_grouped").then(function(pieData) {
       values: sorted_values,
       labels: labels,
       // hovertext: display,
-      type:"pie",
-      title: { 
-        text: neighborhood,
-        font: {
-          size: 25,
-          weight: 500
-        }
-      } 
+      type:"pie"
+      // title: { 
+      //   text: `INCIDENT TYPE IN ${neighborhood}`,
+      //   font: {
+      //     size: 24,
+      //     weight: 100,
+      //     x: 1,
+      //     y: 1
+      //   },
+      //   pad: {
+      //     b: 100
+      //   }
 
   }];
 
   var layout = {
-      showlegend: false,
-      // height: 400,
-      // width: 500
+    showlegend: false,
+    paddingTop: 50,
+    paddingBottom: 0,
+    height: 400,
+    width: 400,
+    margin: {"t": 0, "b": 0, "l": 0, "r": 0}
     };
 
   Plotly.newPlot("pie_chart", pieChart, layout);
@@ -145,12 +152,12 @@ function drawResponseChart(neighborhood) {
       series.data.setAll(result);
 
       chart.children.unshift(am5.Label.new(root, {
-          text: neighborhood,
+          text: `RESPONSE TIME IN ${neighborhood}`,
           fontSize: 25,
           fontWeight: "500",
           textAlign: "center",
           x: am5.percent(50),
-          centerX: am5.percent(100),
+          centerX: am5.percent(50),
           paddingTop: 50,
           paddingBottom: 0
         }));
@@ -201,8 +208,8 @@ function InitDashboard()
       d3.json("./api/v1.0/incidents_time_duration").then(function(lineData) {
         var neighborhood = ""
           neighborhood = lineData[0].neighborhood;
-          neighborhood_lower = neighborhood.toLowerCase();
-          console.log(neighborhood_lower);
+          //neighborhood_lower = neighborhood.toLowerCase();
+          console.log(neighborhood);
       // // Call function to display Bar Chart
       drawPieChart(neighborhood);
 

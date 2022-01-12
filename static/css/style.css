@@ -41,6 +41,19 @@ body {
 
 
 #pie_chart{
-    padding: 0;
-    margin: 0;
+    padding: 30px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.titletext {
+    margin-bottom: 5em;
+    color:#c56150;
+    padding-bottom: 200px;
+}
+
+h4 {
+    padding-top: 20px;
+    text-align: center;
 }
