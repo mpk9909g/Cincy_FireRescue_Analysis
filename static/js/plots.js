@@ -22,33 +22,24 @@ d3.json("/api/v1.0/neighborhood_incidents_grouped").then(function(pieData) {
   var pieChart = [{
       values: sorted_values,
       labels: labels,
-      // hovertext: display,
-      type:"pie"
-      // title: { 
-      //   text: `INCIDENT TYPE IN ${neighborhood}`,
-      //   font: {
-      //     size: 24,
-      //     weight: 100,
-      //     x: 1,
-      //     y: 1
-      //   },
-      //   pad: {
-      //     b: 100
-      //   }
-
+      type:'pie',
+      hole: .4,
+      showlegend: false
   }];
 
   var layout = {
-    showlegend: false,
-    paddingTop: 50,
-    paddingBottom: 0,
-    height: 400,
-    width: 400,
-    margin: {"t": 0, "b": 0, "l": 0, "r": 0}
-    };
+    title: {
+      text: `INCIDENT TYPES IN ${neighborhood}`,
+      size: 32
+    },
+    height: 500,
+    width: 500,
+    showlegend: false
+  };
+  
 
   Plotly.newPlot("pie_chart", pieChart, layout);
-});
+  });
 };
 
 // Define function to draw Response Chart
@@ -115,6 +106,15 @@ function drawResponseChart(neighborhood) {
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       renderer: am5xy.AxisRendererY.new(root, {})
     }));
+    yAxis.children.unshift(
+      am5.Label.new(root, {
+        rotation: -90,
+        text: "Response Time (min)",
+        y: am5.p50,
+        centerX: am5.p50
+      })
+    );
+
 
 
     // Add series
@@ -153,7 +153,7 @@ function drawResponseChart(neighborhood) {
 
       chart.children.unshift(am5.Label.new(root, {
           text: `RESPONSE TIME IN ${neighborhood}`,
-          fontSize: 25,
+          fontSize: 18,
           fontWeight: "500",
           textAlign: "center",
           x: am5.percent(50),
