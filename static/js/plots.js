@@ -27,6 +27,7 @@ d3.json("/api/v1.0/neighborhood_incidents_grouped").then(function(pieData) {
       showlegend: false
   }];
 
+  
   var layout = {
     title: {
       text: `INCIDENT TYPES IN ${neighborhood}`,
