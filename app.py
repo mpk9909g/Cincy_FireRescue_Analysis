@@ -6,13 +6,14 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 from flask import Flask, render_template, jsonify
-
+from config import (pg_id, pg_pw)
 
 #################################################
 # Database Setup
 #################################################
 # engine = create_engine("sqlite:///titanic.sqlite")
-connection_string = "postgres:bootcamp@localhost:5432/cincinnatifire"
+
+connection_string = f"{pg_id}:{pg_pw}@localhost:5432/cincinnatifire"
 engine = create_engine(f'postgresql://{connection_string}')
 
 # reflect an existing database into a new model
