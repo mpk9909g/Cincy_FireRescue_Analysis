@@ -171,7 +171,7 @@ function drawResponseChart(neighborhood) {
         console.log("Root before dispose: " + root);
     
 
-        root.dispose();
+        // root.dispose();
         event.preventDefault();
         console.log("Root after dispose: " + root);
         // root = null;
