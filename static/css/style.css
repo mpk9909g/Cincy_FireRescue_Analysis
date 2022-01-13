@@ -29,10 +29,10 @@ body {
     margin: 0;
     padding: 50px;
 }
-.imgbox {
-    display: grid;
-    height: 100%;
-}
+
+/* .imgbox {
+    height: 300%;
+} */
 .center-fit {
     max-width: 100%;
     max-height: 100vh;
