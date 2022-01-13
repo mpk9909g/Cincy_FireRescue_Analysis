@@ -41,8 +41,8 @@ body {
 
 
 #pie_chart{
-    padding: 30px;
-    margin-top: 30px;
+    padding: 0;
+    margin-top: 0;
     margin-right: auto;
     margin-left: auto;
 }
@@ -51,9 +51,4 @@ body {
     margin-bottom: 5em;
     color:#c56150;
     padding-bottom: 200px;
-}
-
-h4 {
-    padding-top: 20px;
-    text-align: center;
 }
