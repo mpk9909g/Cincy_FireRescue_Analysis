@@ -11,6 +11,7 @@ body {
 }
     
 #map{
+    margin-top: 80px;
     height: 50vh;
     /* width: 100vh; */
 }
